@@ -1,0 +1,36 @@
+<div class="table-responsive">
+  <table class="table">
+    <thead class="text-primary">
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#notes}}
+      <tr>
+        <td>{{ id }}</td>
+        <td>{{ title }}</td>
+        <td>
+          {{#category}}
+          {{ title }}
+          {{/category}}
+        </td>
+        <td>
+          <a
+            href="/dashboard/notes/{{ id }}/update"
+            onclick="SimpleJsMvc.
+            routeLink(event, '/dashboard/notes/{{ id }}/update')"
+          >
+            <i class="nc-icon nc-ruler-pencil"></i>
+          </a>
+        </td>
+        <td><i class="nc-icon nc-scissors"></i></td>
+      </tr>
+      {{/notes}}
+    </tbody>
+  </table>
+</div>

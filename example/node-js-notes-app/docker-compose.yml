@@ -1,0 +1,9 @@
+version: "3"
+services:
+  nodejs-notes-app:
+    image: "nodejs-notes-app:latest"
+    restart: always
+    network_mode: bridge
+    env_file: .env
+    ports:
+      - "11011:11011"

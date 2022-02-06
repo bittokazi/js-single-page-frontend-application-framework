@@ -1,0 +1,55 @@
+<form>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <label>Note Title</label>
+        <input
+          type="text"
+          class="form-control fc-custom"
+          placeholder=""
+          onkeyup="_self.updateForm('title', event)"
+          onchange="_self.updateForm('title', event)"
+        />
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="form-group">
+        <label>Note Body</label>
+        <textarea
+          class="form-control fc-custom"
+          onkeyup="_self.updateForm('content', event)"
+          onchange="_self.updateForm('content', event)"
+        ></textarea>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="form-group">
+        <label>Note Category</label>
+
+        <select
+          type="text"
+          class="form-control fc-custom"
+          onchange="_self.updateForm('categoryid', event)"
+        >
+          <option value="">Select One</option>
+          {{#categories}}
+          <option value="{{ id }}">{{ title }}</option>
+          {{/categories}}
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="update ml-auto mr-auto">
+      <button
+        type="submit"
+        class="btn btn-primary btn-round"
+        onClick="_self.onSubmit(event)"
+      >
+        Add Note
+      </button>
+    </div>
+  </div>
+</form>

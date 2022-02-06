@@ -1,0 +1,24 @@
+<div class="sidebar-wrapper">
+    <ul class="nav">
+        {{#menus}}
+            {{#active}}
+                <li class="active">
+                    <a href="{{path}}"
+                        onclick="SimpleJsMvc.routeLink(event, '{{path}}')">
+                        <i class="{{icon}}"></i>
+                        <p>{{title}}</p>
+                    </a>
+                </li>
+            {{/active}}
+            {{^active}}
+                <li>
+                    <a href="{{path}}"
+                        onclick="SimpleJsMvc.routeLink(event, '{{path}}')">
+                        <i class="{{icon}}"></i>
+                        <p>{{title}}</p>
+                    </a>
+                </li>
+            {{/active}}
+        {{/menus}}
+    </ul>
+</div>
