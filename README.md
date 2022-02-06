@@ -39,3 +39,10 @@ Build By using the Command
     /assets - Contains all files like (css, images, js library)
 
     /engine - this contains the core files to run the framework
+
+## Live Demo
+
+https://spa-demo.bittokazi.com
+
+> username: admin
+> password: password
