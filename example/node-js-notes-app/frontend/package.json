@@ -4,7 +4,7 @@
     "build": "DEPLOY_ENV=prod webpack"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.2",
     "ejs": "^3.1.6",
     "fs": "0.0.1-security",
     "mustache": "^4.2.0",
