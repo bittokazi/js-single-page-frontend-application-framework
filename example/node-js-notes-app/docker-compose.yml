@@ -1,7 +1,11 @@
 version: "3"
 services:
   nodejs-notes-app:
-    image: "nodejs-notes-app:latest"
+    container_name: nodejs-notes-app
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: nodejs-notes-app
     restart: always
     network_mode: bridge
     env_file: .env
