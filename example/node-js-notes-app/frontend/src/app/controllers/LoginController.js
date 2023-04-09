@@ -51,7 +51,7 @@ export default class LoginController {
           this.data.doNotMatch = true;
         })
         .finally(() => {
-          this.loading = false;
+          this.data.loading = false;
           SimpleJsMvc.renderView();
         });
     }
