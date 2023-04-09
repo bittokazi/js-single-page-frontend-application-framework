@@ -11,7 +11,7 @@ export default class LoginController {
         username: "",
         password: "",
       },
-      loading: false,
+      loading: true,
       doNotMatch: false,
     };
   }
@@ -24,7 +24,11 @@ export default class LoginController {
       .then(() => {
         SimpleJsMvc.gotoURL("/dashboard");
       })
-      .catch(() => {});
+      .catch(() => {})
+      .finally(() => {
+        this.data.loading = false;
+        SimpleJsMvc.renderView();
+      });
   }
 
   updateForm(prop, event) {

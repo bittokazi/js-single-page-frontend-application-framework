@@ -60,9 +60,14 @@
         </div> -->
 
         <div class="container-login100-form-btn m-t-17">
+          {{#loading}}
           <button class="login100-form-btn" onClick="_self.onSubmit(event)">
             Login
           </button>
+          {{/loading}}
+          {{^loading}}
+          <button class="login100-form-btn" disabled>Please wait...</button>
+          {{/loading}}
         </div>
       </form>
     </div>
