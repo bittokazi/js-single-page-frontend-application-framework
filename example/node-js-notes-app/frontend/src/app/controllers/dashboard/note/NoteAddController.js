@@ -17,6 +17,20 @@ export class NoteAddController {
         this.onAuthSuccess();
       },
       firstLoad: true,
+      dashboardLayout: function () {
+        return function (val, render) {
+          return render(
+            SimpleJsMvc.renderComponent(
+              {
+                contentView: val,
+                menuKey: "noteAdd",
+                ..._self.data,
+              },
+              DashboardBaseComponent
+            )
+          );
+        };
+      },
     };
   }
 
@@ -59,13 +73,6 @@ export class NoteAddController {
   }
 
   view() {
-    return `${SimpleJsMvc.renderComponent(
-      {
-        contentTemplate: NoteAddView,
-        menuKey: "noteAdd",
-        ...this.data,
-      },
-      DashboardBaseComponent
-    )}`;
+    return NoteAddView;
   }
 }

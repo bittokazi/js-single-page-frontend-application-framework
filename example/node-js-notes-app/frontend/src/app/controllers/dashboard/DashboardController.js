@@ -11,6 +11,21 @@ export class DashboardController {
         this.onAuthSuccess();
       },
       firstLoad: true,
+      dashboardLayout: function () {
+        return function (val, render) {
+          return render(
+            SimpleJsMvc.renderComponent(
+              {
+                contentView: val,
+                menuKey: "dashboard",
+                noCard: true,
+                ...this.data,
+              },
+              DashboardBaseComponent
+            )
+          );
+        };
+      },
     };
   }
 
@@ -25,14 +40,6 @@ export class DashboardController {
   }
 
   view() {
-    return `${SimpleJsMvc.renderComponent(
-      {
-        contentTemplate: DashboardView,
-        menuKey: "dashboard",
-        noCard: true,
-        ...this.data,
-      },
-      DashboardBaseComponent
-    )}`;
+    return DashboardView;
   }
 }

@@ -13,6 +13,20 @@ export class CategoryAddController {
         this.onAuthSuccess();
       },
       firstLoad: true,
+      dashboardLayout: function () {
+        return function (val, render) {
+          return render(
+            SimpleJsMvc.renderComponent(
+              {
+                contentView: val,
+                menuKey: "categoryAdd",
+                ..._self.data,
+              },
+              DashboardBaseComponent
+            )
+          );
+        };
+      },
     };
   }
 
@@ -44,13 +58,6 @@ export class CategoryAddController {
   }
 
   view() {
-    return `${SimpleJsMvc.renderComponent(
-      {
-        contentTemplate: CategoryAddView,
-        menuKey: "categoryAdd",
-        ...this.data,
-      },
-      DashboardBaseComponent
-    )}`;
+    return CategoryAddView;
   }
 }

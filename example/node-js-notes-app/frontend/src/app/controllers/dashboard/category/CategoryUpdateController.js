@@ -14,6 +14,20 @@ export class CategoryUpdateController {
         this.onAuthSuccess();
       },
       firstLoad: true,
+      dashboardLayout: function () {
+        return function (val, render) {
+          return render(
+            SimpleJsMvc.renderComponent(
+              {
+                contentView: val,
+                menuKey: "categoryList",
+                ..._self.data,
+              },
+              DashboardBaseComponent
+            )
+          );
+        };
+      },
     };
   }
 
@@ -52,13 +66,6 @@ export class CategoryUpdateController {
   }
 
   view() {
-    return `${SimpleJsMvc.renderComponent(
-      {
-        contentTemplate: CategoryUpdateView,
-        menuKey: "categoryList",
-        ...this.data,
-      },
-      DashboardBaseComponent
-    )}`;
+    return CategoryUpdateView;
   }
 }

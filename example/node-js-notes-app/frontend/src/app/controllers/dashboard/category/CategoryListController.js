@@ -11,6 +11,20 @@ export class CategoryListController {
         this.onAuthSuccess();
       },
       firstLoad: true,
+      dashboardLayout: function () {
+        return function (val, render) {
+          return render(
+            SimpleJsMvc.renderComponent(
+              {
+                contentView: val,
+                menuKey: "categoryList",
+                ..._self.data,
+              },
+              DashboardBaseComponent
+            )
+          );
+        };
+      },
     };
   }
 
@@ -29,13 +43,6 @@ export class CategoryListController {
   }
 
   view() {
-    return `${SimpleJsMvc.renderComponent(
-      {
-        contentTemplate: CategoryListView,
-        menuKey: "categoryList",
-        ...this.data,
-      },
-      DashboardBaseComponent
-    )}`;
+    return CategoryListView;
   }
 }

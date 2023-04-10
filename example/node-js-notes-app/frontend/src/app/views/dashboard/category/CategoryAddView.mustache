@@ -1,18 +1,29 @@
+{{#dashboardLayout}}
 <form>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="form-group">
-            <label>Category Name</label>
-            <input type="text" class="form-control fc-custom" placeholder="" 
-                onkeyup="_self.updateForm('title', event)"
-                onchange="_self.updateForm('title', event)" />
-            </div>
-        </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <label>Category Name</label>
+        <input
+          type="text"
+          class="form-control fc-custom"
+          placeholder=""
+          onkeyup="_self.updateForm('title', event)"
+          onchange="_self.updateForm('title', event)"
+        />
+      </div>
     </div>
-    <div class="row">
-        <div class="update ml-auto mr-auto">
-            <button type="submit" class="btn btn-primary btn-round"
-                onClick="_self.onSubmit(event)">Add Category</button>
-        </div>
+  </div>
+  <div class="row">
+    <div class="update ml-auto mr-auto">
+      <button
+        type="submit"
+        class="btn btn-primary btn-round"
+        onClick="_self.onSubmit(event)"
+      >
+        Add Category
+      </button>
     </div>
+  </div>
 </form>
+{{/dashboardLayout}}

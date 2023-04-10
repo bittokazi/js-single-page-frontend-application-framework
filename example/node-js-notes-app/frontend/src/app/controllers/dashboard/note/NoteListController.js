@@ -11,6 +11,20 @@ export class NoteListController {
         this.onAuthSuccess();
       },
       firstLoad: true,
+      dashboardLayout: function () {
+        return function (val, render) {
+          return render(
+            SimpleJsMvc.renderComponent(
+              {
+                contentView: val,
+                menuKey: "noteList",
+                ..._self.data,
+              },
+              DashboardBaseComponent
+            )
+          );
+        };
+      },
     };
   }
 
@@ -29,13 +43,6 @@ export class NoteListController {
   }
 
   view() {
-    return `${SimpleJsMvc.renderComponent(
-      {
-        contentTemplate: NoteListView,
-        menuKey: "noteList",
-        ...this.data,
-      },
-      DashboardBaseComponent
-    )}`;
+    return NoteListView;
   }
 }
